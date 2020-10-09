@@ -95,7 +95,7 @@ class ServerRequest extends Request implements ServerRequestInterface
 
     public function withParsedBody($data)
     {
-        if (!is_object($data) && !is_array($data)) {
+        if (!is_object($data) && !is_array($data) && $data !== null) {
             throw new \InvalidArgumentException('Unsupported argument type');
         }
 
